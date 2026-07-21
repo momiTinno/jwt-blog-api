@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+.env
+package-lock.json
+JWT_Blog_API_PRD_v2.md
+JWT_Blog_API_PRD_v2.pdf

@@ -1,0 +1,94 @@
+{
+  "id": "b1ef7d8a-4a63-4e5f-8d3a-2c1f4b6a9e01",
+  "name": "JWT Blog API",
+  "description": "Minimal Postman collection for VSCode import compatibility.",
+  "order": [
+    "req-health",
+    "req-register",
+    "req-login",
+    "req-me",
+    "req-create-blog",
+    "req-get-blogs",
+    "req-get-blog",
+    "req-update-blog",
+    "req-delete-blog"
+  ],
+  "requests": [
+    {
+      "id": "req-health",
+      "name": "Health Check",
+      "url": "http://localhost:5000/health",
+      "method": "GET",
+      "headers": [],
+      "data": []
+    },
+    {
+      "id": "req-register",
+      "name": "Register User",
+      "url": "http://localhost:5000/api/auth/register",
+      "method": "POST",
+      "headers": "Content-Type: application/json",
+      "dataMode": "raw",
+      "rawModeData": "{\n  \"name\": \"Momitul\",\n  \"email\": \"momitul@example.com\",\n  \"password\": \"SecurePass123\"\n}"
+    },
+    {
+      "id": "req-login",
+      "name": "Login User",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "headers": "Content-Type: application/json",
+      "dataMode": "raw",
+      "rawModeData": "{\n  \"email\": \"momitul@example.com\",\n  \"password\": \"SecurePass123\"\n}"
+    },
+    {
+      "id": "req-me",
+      "name": "Get Current User",
+      "url": "http://localhost:5000/api/auth/me",
+      "method": "GET",
+      "headers": "Authorization: Bearer REPLACE_WITH_TOKEN",
+      "data": []
+    },
+    {
+      "id": "req-create-blog",
+      "name": "Create Blog",
+      "url": "http://localhost:5000/api/blogs",
+      "method": "POST",
+      "headers": "Content-Type: application/json\nAuthorization: Bearer REPLACE_WITH_TOKEN",
+      "dataMode": "raw",
+      "rawModeData": "{\n  \"title\": \"My first post\",\n  \"content\": \"This is the blog content\"\n}"
+    },
+    {
+      "id": "req-get-blogs",
+      "name": "Get All Blogs",
+      "url": "http://localhost:5000/api/blogs",
+      "method": "GET",
+      "headers": [],
+      "data": []
+    },
+    {
+      "id": "req-get-blog",
+      "name": "Get Blog By ID",
+      "url": "http://localhost:5000/api/blogs/1",
+      "method": "GET",
+      "headers": [],
+      "data": []
+    },
+    {
+      "id": "req-update-blog",
+      "name": "Update Blog",
+      "url": "http://localhost:5000/api/blogs/1",
+      "method": "PATCH",
+      "headers": "Content-Type: application/json\nAuthorization: Bearer REPLACE_WITH_TOKEN",
+      "dataMode": "raw",
+      "rawModeData": "{\n  \"title\": \"Updated title\"\n}"
+    },
+    {
+      "id": "req-delete-blog",
+      "name": "Delete Blog",
+      "url": "http://localhost:5000/api/blogs/1",
+      "method": "DELETE",
+      "headers": "Authorization: Bearer REPLACE_WITH_TOKEN",
+      "data": []
+    }
+  ]
+}
